@@ -17,10 +17,6 @@ namespace LagoonStay.Web.Controllers
 
         public IActionResult Login(string returnUrl = null)
         {
-            //if(returnUrl == null)
-            //{
-            //    returnUrl = Url.Content("~/");
-            //}
 
             returnUrl ??= Url.Content("~/");
 
@@ -74,7 +70,7 @@ namespace LagoonStay.Web.Controllers
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
             // Ensure roles exist
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 // Create the user
